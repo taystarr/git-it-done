@@ -29,8 +29,10 @@ var displayRepos = function(repos, searchTerm) {
     for (var i = 0; i < repos.length; i++) {
         var repoName = repos[i].owner.login + "/" + repos[i].name;
 
-        var repoEl = document.createElement("div");
+        // create link to previous page
+        var repoEl = document.createElement("a");
         repoEl.className = "list-item flex-row justify-space-between align-center";
+        repoEl.setAttribute("href", "./single-repo.html?repo=" + repoName);
 
         var titleEl = document.createElement("span");
         titleEl.textContent = repoName;
